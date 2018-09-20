@@ -1,0 +1,19 @@
+{
+  "name": "with-pidfile",
+  "version": "1.0.0",
+  "description": "launch an app with pidfile",
+  "main": "node-pidifle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iofurlan/with-pidfile.git"
+  },
+  "author": "Dario Furlan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iofurlan/with-pidfile/issues"
+  },
+  "homepage": "https://github.com/iofurlan/with-pidfile#readme"
+}
