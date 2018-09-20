@@ -2,7 +2,7 @@
   "name": "with-pidfile",
   "version": "1.0.0",
   "description": "launch an app with pidfile",
-  "main": "node-pidifle.js",
+  "main": "node-pidfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
