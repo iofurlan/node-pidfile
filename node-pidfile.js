@@ -23,11 +23,4 @@ function with_pid(filename, exec) {
     }
 }
 
-function loop() {
-    console.log("Works");
-    setTimeout(loop, 1000);
-}
-
-with_pid(__filename,loop);
-
 module.exports = with_pid;
