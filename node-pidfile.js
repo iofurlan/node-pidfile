@@ -8,7 +8,6 @@ function start(pidfile, exec) {
 
 function with_pid(filename, exec) {
     const pidfile = filename + ".pid";
-    console.log(pidfile);
     if (fs.existsSync(pidfile)) {
         let existing_pid = fs.readFileSync(pidfile, 'utf8');
         try {
