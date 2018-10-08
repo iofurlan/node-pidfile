@@ -1,8 +1,8 @@
-"use strict";
 const fs = require('fs');
 
 function start(pidfile, exec) {
     fs.writeFileSync(pidfile, process.pid);
+    console.log("started: ["+process.pid+"] - "+pidfile);
     exec();
 }
 
