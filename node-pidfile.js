@@ -2,26 +2,30 @@ const fs = require('fs');
 
 function start(pidfile, exec) {
     fs.writeFileSync(pidfile, process.pid);
-    console.log("started: ["+process.pid+"] - "+pidfile);
+    console.log("started: [" + process.pid + "] - " + pidfile);
     exec();
+}
+
+function already_running() {
+    console.error("Already Running, exiting...");
+    process.exit(0);
 }
 
 function with_pid(filename, exec) {
     const pidfile = filename + ".pid";
-    console.log(pidfile);
     if (fs.existsSync(pidfile)) {
-        console.log("file exist");
         let existing_pid = fs.readFileSync(pidfile, 'utf8');
         try {
-            process.kill(existing_pid, "0");
-            console.error("Already Running, exiting...");
-            process.exit(0);
+            process.kill(existing_pid, 0);
+            already_running();
         } catch (e) {
-            console.log("pid not running");
-            start(pidfile, exec);
+            if (e.code === "ESRCH") {
+                start(pidfile, exec);
+            } else {
+                already_running();
+            }
         }
     } else {
-        console.log("file doesn't exist");
         start(pidfile, exec);
     }
 }
