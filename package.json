@@ -1,6 +1,6 @@
 {
   "name": "with-pidfile",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "launch an app with pidfile",
   "main": "node-pidfile.js",
   "scripts": {
